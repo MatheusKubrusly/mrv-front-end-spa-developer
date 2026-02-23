@@ -9,5 +9,13 @@ ul {
 #main_title {
     color: grey;
     font-size: 50px;
-    font-
+}
+
+.contatos {
+    background: wheat;
+    margin: 10px;
+    padding: 10px;
+    border: black 5px solid;
+}.contatos:hover {
+    background: orange;
 }
