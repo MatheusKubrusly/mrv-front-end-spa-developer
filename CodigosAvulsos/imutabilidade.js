@@ -3,8 +3,6 @@ const user = {
     lastName: 'Cabrini da Silva'
 }
 
-Object.freeze(user);
-
 user.fullName = 'Guilherme Cabrini da Silva';
 
 console.log(user);
