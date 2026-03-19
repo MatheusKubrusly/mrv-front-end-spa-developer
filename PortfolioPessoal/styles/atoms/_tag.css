@@ -1,0 +1,181 @@
+/* ============================================
+ * TAG - Componentes de Etiqueta/Badge
+ * ============================================ */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-1) var(--spacing-3);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  user-select: none;
+  cursor: default;
+}
+
+.tag:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* Tag com status colorido */
+
+/* Tag Default - neutro */
+.tag--default {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+}
+
+/* Tag Primary - accent color */
+.tag--primary {
+  background-color: var(--color-accent);
+  color: white;
+  border: 1px solid var(--color-accent);
+}
+
+.tag--primary:hover {
+  filter: brightness(1.1);
+}
+
+/* Tag Success */
+.tag--success {
+  background-color: var(--color-success);
+  color: white;
+  border: 1px solid var(--color-success);
+}
+
+.tag--success:hover {
+  filter: brightness(1.1);
+}
+
+/* Tag Warning */
+.tag--warning {
+  background-color: var(--color-warning);
+  color: white;
+  border: 1px solid var(--color-warning);
+}
+
+.tag--warning:hover {
+  filter: brightness(1.1);
+}
+
+/* Tag Danger */
+.tag--danger {
+  background-color: var(--color-danger);
+  color: white;
+  border: 1px solid var(--color-danger);
+}
+
+.tag--danger:hover {
+  filter: brightness(1.1);
+}
+
+/* Tag Info */
+.tag--info {
+  background-color: var(--color-info);
+  color: white;
+  border: 1px solid var(--color-info);
+}
+
+.tag--info:hover {
+  filter: brightness(1.1);
+}
+
+/* Tamanhos */
+
+.tag--small {
+  padding: var(--spacing-1) var(--spacing-2);
+  font-size: 0.625rem; /* 10px */
+}
+
+.tag--large {
+  padding: var(--spacing-2) var(--spacing-4);
+  font-size: var(--font-size-sm);
+}
+
+/* Tag com ícone */
+.tag__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Tag removível */
+.tag--removable {
+  padding-right: var(--spacing-1);
+}
+
+.tag__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  margin-left: var(--spacing-1);
+  cursor: pointer;
+  border-radius: var(--radius-full);
+  transition: background-color var(--transition-fast);
+}
+
+.tag--removable:hover .tag__close {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Badge - número/contador */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: var(--spacing-0) var(--spacing-2);
+  font-size: 0.625rem; /* 10px */
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  background-color: var(--color-accent);
+  color: white;
+  border-radius: var(--radius-full);
+  text-align: center;
+}
+
+.badge--success {
+  background-color: var(--color-success);
+}
+
+.badge--warning {
+  background-color: var(--color-warning);
+}
+
+.badge--danger {
+  background-color: var(--color-danger);
+}
+
+.badge--info {
+  background-color: var(--color-info);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .tag {
+    padding: var(--spacing-1) var(--spacing-2);
+    font-size: 0.625rem; /* 10px */
+  }
+
+  .tag--large {
+    padding: var(--spacing-1) var(--spacing-3);
+    font-size: var(--font-size-xs);
+  }
+}

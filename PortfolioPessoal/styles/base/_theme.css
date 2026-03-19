@@ -1,0 +1,144 @@
+/* ============================================
+ * TEMA - Alternância Dark/Light Mode
+ * ============================================ */
+
+/* ============================================
+ * Tema Dark (padrão, quando não há preferência)
+ * ============================================ */
+
+:root {
+  color-scheme: dark;
+}
+
+/* Suporte a prefers-color-scheme para dark */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+/* ============================================
+ * Tema Light via atributo data-theme="light"
+ * ============================================ */
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --color-bg-primary: #FFFFFF;
+    --color-bg-secondary: #F8F9FA;
+    --color-text-primary: #1A1A1A;
+    --color-text-secondary: #666666;
+    --color-accent: #0056B3;
+    --color-border: #DDDDDD;
+    --color-shadow: rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Força tema light quando data-theme="light" está presente */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F8F9FA;
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #666666;
+  --color-accent: #0056B3;
+  --color-border: #DDDDDD;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Força tema dark quando data-theme="dark" está presente */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg-primary: #0A0A0A;
+  --color-bg-secondary: #1A1A1A;
+  --color-text-primary: #EAEAEA;
+  --color-text-secondary: #A1A1A1;
+  --color-accent: #007BFF;
+  --color-border: #333333;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+ * Animação de transição ao trocar temas
+ * ============================================ */
+
+body.theme-transitioning {
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+body.theme-transitioning * {
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+
+/* ============================================
+ * Estilos específicos por tema (se necessário)
+ * ============================================ */
+
+/* Customizações para tema dark */
+:root[data-theme="dark"] {
+  /* Cores mais vibrantes para tema escuro */
+  --color-success: #4CAF50;
+  --color-warning: #FFB300;
+  --color-danger: #FF6B6B;
+  --color-info: #29B6F6;
+}
+
+/* Customizações para tema light */
+:root[data-theme="light"] {
+  /* Cores mais suaves para tema claro */
+  --color-success: #2E7D32;
+  --color-warning: #F57F17;
+  --color-danger: #C62828;
+  --color-info: #0277BD;
+}
+
+/* ============================================
+ * Scrollbar customizada por tema
+ * ============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+  transition: background var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}
+
+/* ============================================
+ * Placeholder por tema
+ * ============================================ */
+
+::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.7;
+}
+
+::-webkit-input-placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.7;
+}
+
+/* ============================================
+ * Focus visible refinado
+ * ============================================ */
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Remover outline em cliques com mouse */
+*:focus:not(:focus-visible) {
+  outline: none;
+}

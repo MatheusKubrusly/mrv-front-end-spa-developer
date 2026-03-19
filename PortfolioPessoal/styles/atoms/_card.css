@@ -1,0 +1,104 @@
+/* ============================================
+ * CARD - Componentes de Cartão
+ * ============================================ */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  border: 1px solid var(--color-border);
+}
+
+/* Variações de Card */
+
+/* Card Minimal - sem sombra, apenas borda */
+.card--minimal {
+  box-shadow: none;
+  border: 1px solid var(--color-border);
+}
+
+.card--minimal:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+/* Card Elevated - com sombra, hover levanta mais */
+.card--elevated {
+  box-shadow: var(--shadow-base);
+  border: none;
+}
+
+.card--elevated:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+/* Card Highlighted - com borda accent e sombra colorida */
+.card--highlighted {
+  border: 2px solid var(--color-accent);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.1);
+}
+
+.card--highlighted:hover {
+  box-shadow: 0 0 25px rgba(0, 123, 255, 0.2);
+  transform: translateY(-4px);
+}
+
+/* Padrão para conteúdo dentro de cards */
+.card__header {
+  padding: var(--spacing-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.card__body {
+  padding: var(--spacing-6);
+  flex: 1;
+}
+
+.card__footer {
+  padding: var(--spacing-6);
+  border-top: 1px solid var(--color-border);
+}
+
+.card__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin: var(--spacing-0);
+}
+
+.card__subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-top: var(--spacing-2);
+}
+
+.card__description {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-top: var(--spacing-3);
+}
+
+/* Card com imagem */
+.card__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .card {
+    border-radius: var(--radius-md);
+  }
+
+  .card__header,
+  .card__body,
+  .card__footer {
+    padding: var(--spacing-4);
+  }
+}

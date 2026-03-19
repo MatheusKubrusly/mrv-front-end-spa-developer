@@ -1,0 +1,20 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Post 1",
+      "excerpt": "Descrição breve do post",
+      "date": "2024-01-15",
+      "category": "tech",
+      "url": "#"
+    },
+    {
+      "id": 2,
+      "title": "Post 2",
+      "excerpt": "Descrição breve do post",
+      "date": "2024-01-10",
+      "category": "design",
+      "url": "#"
+    }
+  ]
+}

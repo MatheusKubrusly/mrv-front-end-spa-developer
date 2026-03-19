@@ -1,0 +1,216 @@
+/* ============================================
+ * LINK - Componentes de Link Estilizado
+ * ============================================ */
+
+.link {
+  position: relative;
+  display: inline;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  text-decoration-skip-ink: auto;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transition: transform var(--transition-fast);
+  transform-origin: bottom right;
+}
+
+/* Hover e Focus */
+.link:hover {
+  color: var(--color-accent);
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.link:active {
+  color: var(--color-accent);
+  filter: brightness(0.9);
+}
+
+/* Variações de Link */
+
+/* Link Default */
+.link--default {
+  color: var(--color-accent);
+}
+
+.link--default:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* Link com underline permanente */
+.link--underlined {
+  text-decoration: underline;
+}
+
+.link--underlined:hover {
+  text-decoration: underline;
+}
+
+/* Link sem underline no hover */
+.link--clean {
+  text-decoration: none;
+}
+
+.link--clean:hover::after {
+  transform: scaleX(0);
+}
+
+/* Link Subtle - menos contraste */
+.link--subtle {
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-regular);
+}
+
+.link--subtle:hover {
+  color: var(--color-accent);
+}
+
+/* Link Muted - cor mais discreta */
+.link--muted {
+  color: var(--color-text-secondary);
+}
+
+.link--muted:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* Link External (com ícone) */
+.link--external {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+.link--external::after {
+  content: '↗';
+  margin-left: var(--spacing-1);
+  font-size: 0.8em;
+}
+
+/* Link com ícone antes */
+.link--with-icon::before {
+  display: inline-block;
+  margin-right: var(--spacing-1);
+  vertical-align: middle;
+}
+
+/* Link em bloco */
+.link--block {
+  display: block;
+  padding: var(--spacing-3);
+  border-radius: var(--radius-base);
+  transition: background-color var(--transition-fast);
+}
+
+.link--block:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+/* Link em breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.breadcrumb__item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb__separator {
+  margin: 0 var(--spacing-2);
+  color: var(--color-text-secondary);
+}
+
+.breadcrumb__link {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb__link:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.breadcrumb__current {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Link com animação ao passar */
+.link--animated {
+  position: relative;
+  overflow: hidden;
+}
+
+.link--animated::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-accent);
+  opacity: 0.1;
+  transform: translateY(-50%);
+  transition: left var(--transition-fast);
+  z-index: -1;
+}
+
+.link--animated:hover::before {
+  left: 0;
+}
+
+/* Link em contexto de navegação */
+nav .link {
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-base);
+  transition: all var(--transition-fast);
+}
+
+nav .link:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+nav .link.active {
+  color: var(--color-accent);
+  background-color: var(--color-bg-secondary);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .link--block {
+    padding: var(--spacing-2);
+  }
+
+  .breadcrumb {
+    font-size: var(--font-size-xs);
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "ptBR": {
+    "nav": {
+      "home": "Home",
+      "news": "Notícias",
+      "cv": "Currículo",
+      "projects": "Projetos"
+    },
+    "hero": {
+      "welcome": "Bem-vindo",
+      "description": "Desenvolvedor web fullstack apaixonado por tecnologia"
+    },
+    "now": {
+      "title": "O que estou fazendo agora"
+    },
+    "timeline": {
+      "title": "Timeline / Notícias"
+    },
+    "curriculum": {
+      "title": "Currículo"
+    },
+    "projects": {
+      "title": "Projetos"
+    },
+    "footer": {
+      "copyright": "&copy; 2024 Portfólio Pessoal. Todos os direitos reservados."
+    }
+  },
+  "en": {
+    "nav": {
+      "home": "Home",
+      "news": "News",
+      "cv": "Resume",
+      "projects": "Projects"
+    },
+    "hero": {
+      "welcome": "Welcome",
+      "description": "Fullstack web developer passionate about technology"
+    },
+    "now": {
+      "title": "What I'm doing now"
+    },
+    "timeline": {
+      "title": "Timeline / News"
+    },
+    "curriculum": {
+      "title": "Resume"
+    },
+    "projects": {
+      "title": "Projects"
+    },
+    "footer": {
+      "copyright": "&copy; 2024 Personal Portfolio. All rights reserved."
+    }
+  }
+}

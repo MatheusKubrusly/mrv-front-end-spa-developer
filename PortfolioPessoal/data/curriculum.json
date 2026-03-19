@@ -1,0 +1,27 @@
+{
+  "education": [
+    {
+      "id": 1,
+      "institution": "Instituição de Ensino",
+      "course": "Curso",
+      "level": "Graduação",
+      "year": "2024"
+    }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "company": "Empresa",
+      "role": "Cargo",
+      "period": "2023-2024",
+      "description": "Descrição da experiência"
+    }
+  ],
+  "hobbies": [
+    {
+      "id": 1,
+      "name": "Hobby 1",
+      "description": "Descrição do hobby"
+    }
+  ]
+}
