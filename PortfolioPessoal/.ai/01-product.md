@@ -1,7 +1,7 @@
 # 🎯 Produto e Visão: Portfólio Pessoal 
 
 ## Objetivo
-Desenvolver um portfólio pessoal interativo e de alta conversão. Não é apenas um currículo, mas uma experiência digital que demonstra minhas habilidades técnicas através de UI/UX avançados, estudos de caso e interatividade. Além disso, o objeto, digamos que principal, seria conseguir por meio desse desenvolvimento ampliar ainda mais o meu currículo e também conhecimento no que tange o desenvolvimento web.
+Desenvolver um portfólio pessoal interativo e de alta conversão utilizando inicialmente de **HTML5, CSS3 e JavaScript ES6+**. Não é apenas um currículo, mas uma experiência digital que demonstra minhas habilidades técnicas através de UI/UX avançados, estudos de caso e interatividade. Além disso, o objeto, digamos que principal, seria conseguir por meio desse desenvolvimento ampliar ainda mais o meu currículo e também conhecimento no que tange o desenvolvimento web.
 
 ## Tom e Vibe
 Inovador, interativo, limpo, minimalista e altamente profissional.
@@ -36,6 +36,7 @@ O site deve conter as seguintes seções e mecânicas:
      * Experiência Profissional
      * Hobbies e Interesses
      * Estudos Individuais
+   * Dados carregados dinamicamente via JSON e renderizados com JavaScript ES6+.
    * Opção de download do CV em formato PDF.
 
 7. **Projetos e Estudos de Caso:**
