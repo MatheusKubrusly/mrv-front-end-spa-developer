@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Matheus Kubrusly </title> <!-- refere-se ao título da página que estaremos criando dentro do browser -->
+    <!-- Adicionando a biblioteca de ícones Font Awesome, biblioteca esta que está no formato .css, ou seja, contém algumas classes que poderemos utilizar dentro deste nosso código .html -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <h1 id="main_title">Criando minha primeira página WEB com html</h1>
+        <img id="main_photo" src="foto-perfil.png" alt="Foto de Matheus Kubrusly" class="profile-photo">
+        <p class="subtitle"> Tentando entender um pouco mais de como funciona esta linguagem...</p>
+    </header>
+
+    <main class="content-container">
+        <section class="about-section">
+            <h2>Estruturas HTML</h2>
+            <p>Identificando algumas das estruturas mais utilizadas dentro da linguagem html.</p>
+        </section>
+
+        <article class="reflection-article">
+            <h3>Reflexão</h3>
+            <p class="plain_text">"Gentileza gera gentileza"</p> <!--parágrafo-->
+        </article>
+    </main>
+
+    <aside class="contatos">
+        <h3>Formas de manter contato comigo:</h3>
+        <ul> <!--lista não-ordenada-->
+            <li>
+                <a class="references" href="https://github.com/MatheusKubrusly/mrv-front-end-spa-developer" target="_blank">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a> <!-- irá abrir este link em uma nova aba -->
+            </li>
+            <li>
+                <a class="references" href="https://www.linkedin.com/in/matheus-kubrusly" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+            </li>
+            <li>
+                <a class="references" href="mailto:matheusmontenegro100@gmail.com" target="_blank">
+                    <i class="fa-solid fa-envelope"></i> E-mail
+                </a>
+            </li>
+        </ul>
+    </aside>
+    <footer class="main-footer">Rio de Janeiro, 15 de Janeiro de 2026</footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
