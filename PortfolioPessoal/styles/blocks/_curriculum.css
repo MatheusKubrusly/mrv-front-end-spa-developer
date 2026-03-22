@@ -1,0 +1,31 @@
+/* Curriculum block styles - mobile-first */
+.curriculum .cv-container {
+  display: grid;
+  gap: 1.25rem;
+}
+.curriculum .cv-section {
+  background: var(--bg-secondary);
+  padding: 1rem;
+  border-radius: 8px;
+}
+.curriculum .cv-item {
+  margin-bottom: 0.75rem;
+}
+.curriculum .cv-item h3 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+.curriculum .cv-item p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+.curriculum .cv-item .highlights {
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}
+@media(min-width:800px){
+  .curriculum .cv-container{
+    grid-template-columns: 1fr 1fr;
+  }
+}

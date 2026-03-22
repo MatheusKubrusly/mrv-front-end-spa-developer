@@ -1,0 +1,101 @@
+/* Illustration styles: hero SVG and responsive behavior */
+.hero-illustration{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  max-width:420px;
+  width:100%;
+  margin-left:var(--spacing-6);
+}
+
+.dev-illustration{
+  width:100%;
+  height:auto;
+  display:block;
+  max-width:360px;
+}
+
+/* Keep illustration visible on medium+ screens, hide on very small viewports for readability */
+@media (max-width:800px){
+  .hero-illustration{ display:none; }
+}
+
+/* Make sure the illustration respects theme tokens */
+.dev-illustration .line{
+  fill:var(--color-text-primary);
+}
+
+.dev-illustration .cursor{
+  fill:var(--color-accent);
+}
+
+/* Small animated figures row */
+.hero-figures{
+  display:flex;
+  justify-content:center;
+  gap:var(--spacing-4);
+  margin-top:var(--spacing-6);
+}
+
+.figures-list{ list-style:none; display:flex; gap:var(--spacing-4); padding:0; margin:0 }
+.figure-item{ width:100px; height:100px; display:flex; align-items:center; justify-content:center }
+.figure{ width:100%; height:auto; display:block }
+
+@media (max-width:800px){
+  .hero-figures{ display:none }
+}
+
+/* Figures visuals and animations */
+.fig-bg{ fill: rgba(0,0,0,0.06) }
+.bar{ fill: currentColor; opacity:.9 }
+.bar-1{ transform-origin:10px 100px; animation: grow 1.2s ease-in-out infinite }
+.bar-2{ transform-origin:40px 100px; animation: grow 1.2s ease-in-out .12s infinite }
+.bar-3{ transform-origin:70px 100px; animation: grow 1.2s ease-in-out .24s infinite }
+.bar-4{ transform-origin:100px 100px; animation: grow 1.2s ease-in-out .36s infinite }
+
+.chip{ fill: currentColor }
+.chip-detail{ fill: var(--color-bg-primary) }
+.chip{ animation: pulse 2.8s ease-in-out infinite }
+
+.sigma{ stroke: currentColor }
+.dot{ fill: currentColor }
+.wiggle{ animation: wiggle 3s ease-in-out infinite }
+
+@keyframes grow{ 0%{ transform: scaleY(.2); opacity:.6 } 50%{ transform: scaleY(1); opacity:1 } 100%{ transform: scaleY(.2); opacity:.6 } }
+@keyframes pulse{ 0%{ opacity:.65 } 50%{ opacity:1 } 100%{ opacity:.65 } }
+@keyframes wiggle{ 0%{ transform: rotate(-6deg) } 50%{ transform: rotate(6deg) } 100%{ transform: rotate(-6deg) } }
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .bar, .chip, .wiggle { animation: none !important }
+}
+
+/* Toggle class to programmatically disable animations */
+.reduced-motion .bar,
+.reduced-motion .chip,
+.reduced-motion .wiggle { animation: none !important }
+
+/* Controls */
+.figures-controls{ display:flex; justify-content:flex-end; margin-bottom:var(--spacing-3) }
+.figure-link{ display:flex; align-items:center; justify-content:center; width:100%; height:100%; border-radius:8px }
+.figure-link:focus{ outline: 3px solid var(--color-accent); outline-offset:3px }
+
+/* Tech icons row */
+.tech-icons{ display:flex; justify-content:center; margin-top:var(--spacing-4) }
+.tech-list{ list-style:none; display:flex; gap:var(--spacing-3); padding:0; margin:0 }
+.tech-item{ display:flex }
+.tech-link{ display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:8px; background:transparent; transition:transform .18s ease, box-shadow .18s ease }
+.tech-link:hover{ transform:translateY(-4px); box-shadow:0 6px 18px rgba(0,0,0,.3) }
+.tech-link:focus{ outline:3px solid var(--color-accent); outline-offset:3px }
+.tech-svg{ width:28px; height:28px; display:block }
+
+/* individual tech color hints (kept small and optional) */
+.tech-html{ color:#E34F26 }
+.tech-css{ color:#1572B6 }
+.tech-js{ color:#F7DF1E }
+.tech-react{ color:#61DAFB }
+.tech-node{ color:#83CD29 }
+
+@media (max-width:600px){
+  .tech-icons{ display:none }
+}

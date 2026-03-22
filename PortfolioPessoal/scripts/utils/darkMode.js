@@ -29,7 +29,8 @@ class ThemeManager {
    * @returns {string|null} Tema salvo ou null
    */
   getSavedTheme() {
-    return localStorage.getItem(this.STORAGE_KEY); // no momento, este método estará retornando null, posto que o item que estamos buscando não foi definido
+    // Compatibilidade com chave antiga 'theme' e chave atual definida em STORAGE_KEY
+    return localStorage.getItem(this.STORAGE_KEY) || localStorage.getItem('theme');
   }
 
   /**
@@ -99,3 +100,5 @@ class ThemeManager {
 
 // Instancia o gerenciador de tema globalmente
 const themeManager = new ThemeManager();
+// Expor como variável global para integração estrutural (scripts/main.js)
+window.themeManager = themeManager;

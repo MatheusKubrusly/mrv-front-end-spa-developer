@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="fig-analytics" viewBox="0 0 120 120">
+    <style>
+      .bar{fill:var(--color-accent);}
+      .bg{fill:var(--color-bg-elev);} 
+      .bar-1{animation: grow 1.2s ease-in-out infinite;transform-origin:10px 100px}
+      .bar-2{animation: grow 1.2s ease-in-out .12s infinite;transform-origin:40px 100px}
+      .bar-3{animation: grow 1.2s ease-in-out .24s infinite;transform-origin:70px 100px}
+      .bar-4{animation: grow 1.2s ease-in-out .36s infinite;transform-origin:100px 100px}
+      @keyframes grow{0%{transform:scaleY(.2);opacity:.6}50%{transform:scaleY(1);opacity:1}100%{transform:scaleY(.2);opacity:.6}}
+    </style>
+    <rect class="bg" x="6" y="10" width="108" height="92" rx="8"/>
+    <g transform="translate(10,8)">
+      <rect class="bar bar-1" x="0" y="50" width="16" height="42" rx="2"/>
+      <rect class="bar bar-2" x="30" y="30" width="16" height="62" rx="2"/>
+      <rect class="bar bar-3" x="60" y="18" width="16" height="74" rx="2"/>
+      <rect class="bar bar-4" x="90" y="42" width="16" height="50" rx="2"/>
+    </g>
+  </symbol>
+
+  <symbol id="fig-technology" viewBox="0 0 120 120">
+    <style>
+      .chip{fill:var(--color-accent);}
+      .pad{fill:var(--color-bg-elev);}
+      .pulse{animation: pulse 2.8s ease-in-out infinite}
+      @keyframes pulse{0%{opacity:.65}50%{opacity:1}100%{opacity:.65}}
+    </style>
+    <rect class="pad" x="10" y="10" width="100" height="100" rx="12"/>
+    <g transform="translate(34,34)">
+      <rect class="chip pulse" x="0" y="0" width="52" height="52" rx="6"/>
+      <rect x="12" y="8" width="6" height="8" rx="1" fill="var(--color-bg-primary)"/>
+      <rect x="34" y="8" width="6" height="8" rx="1" fill="var(--color-bg-primary)"/>
+      <rect x="12" y="34" width="28" height="6" rx="1" fill="var(--color-bg-primary)"/>
+    </g>
+  </symbol>
+
+  <symbol id="fig-math" viewBox="0 0 120 120">
+    <style>
+      .sigma{fill:var(--color-accent);}
+      .dot{fill:var(--color-accent);}
+      .wiggle{animation: wiggle 3s ease-in-out infinite}
+      @keyframes wiggle{0%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}100%{transform:rotate(-6deg)}}
+    </style>
+    <rect x="6" y="6" width="108" height="108" rx="12" fill="var(--color-bg-elev)"/>
+    <g transform="translate(30,26)" class="wiggle">
+      <path class="sigma" d="M6 8c8 0 12 2 18 6 6 4 10 10 10 18s-4 14-10 18c-6 4-10 6-18 6" fill="none" stroke="var(--color-accent)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle class="dot" cx="90" cy="26" r="4"/>
+    </g>
+  </symbol>
+
+</svg>

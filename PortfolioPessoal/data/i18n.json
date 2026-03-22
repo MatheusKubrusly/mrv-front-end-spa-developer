@@ -30,6 +30,10 @@
     },
     "projects": {
       "title": "Projetos"
+    ,
+    "labels": {
+      "mine": "Meu projeto"
+    }
     },
     "site": {
       "title": "Portfólio Pessoal — Matheus Kubrusly"
@@ -100,6 +104,10 @@
     },
     "projects": {
       "title": "Projects"
+    ,
+    "labels": {
+      "mine": "My project"
+    }
     },
     "site": {
       "title": "Personal Portfolio — Matheus Kubrusly"

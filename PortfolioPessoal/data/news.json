@@ -1,20 +1,50 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "Post 1",
-      "excerpt": "Descrição breve do post",
+      "id": "news-001",
+      "title": "Lançamento do novo layout",
+      "excerpt": "Refatorei o layout do hero e melhorei a legibilidade mobile.",
       "date": "2024-01-15",
-      "category": "tech",
-      "url": "#"
+      "category": "learning",
+      "url": "#",
+      "highlight": true
     },
     {
-      "id": 2,
-      "title": "Post 2",
-      "excerpt": "Descrição breve do post",
+      "id": "news-002",
+      "title": "Experimento de design de cards",
+      "excerpt": "Testes de composição visual para melhorar escaneabilidade.",
       "date": "2024-01-10",
-      "category": "design",
-      "url": "#"
+      "category": "article",
+      "url": "#",
+      "highlight": false
+    }
+    ,
+    {
+      "id": "news-003",
+      "title": "Iniciação Científica: Mineração de Dados Educacionais",
+      "excerpt": "Iniciei atividade de pesquisa com bolsa no CEFET-RJ para analisar evasão escolar usando Python.",
+      "date": "2024-09-01",
+      "category": "academic",
+      "url": "#",
+      "highlight": true
+    },
+    {
+      "id": "news-004",
+      "title": "Aulas particulares de Matemática",
+      "excerpt": "Atuo como professor particular de matemática para graduação e ensino médio desde junho de 2024.",
+      "date": "2024-06-01",
+      "category": "personal-note",
+      "url": "#",
+      "highlight": false
+    },
+    {
+      "id": "news-005",
+      "title": "Histórico acadêmico atualizado",
+      "excerpt": "Registro de desempenho e disciplinas cursadas até 05/02/2026 disponível no relatório acadêmico.",
+      "date": "2026-02-05",
+      "category": "academic",
+      "url": "#",
+      "highlight": false
     }
   ]
 }

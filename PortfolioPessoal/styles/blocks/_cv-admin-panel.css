@@ -1,0 +1,103 @@
+/* Painel auxiliar para configurar o link do curriculo e anexar PDF localmente */
+.cv-admin-panel {
+  max-width: 820px;
+  margin: 0 auto var(--spacing-12);
+}
+
+.cv-admin-panel details {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.cv-admin-panel summary {
+  color: var(--color-text-primary);
+  cursor: pointer;
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-3);
+}
+
+.cv-admin-panel p,
+.cv-admin-panel label,
+.cv-admin-panel span {
+  color: var(--color-text-secondary);
+}
+
+.cv-admin-panel p {
+  margin-bottom: var(--spacing-3);
+}
+
+.cv-admin-panel input[type="file"] {
+  display: block;
+  width: 100%;
+  margin-top: var(--spacing-2);
+  margin-bottom: var(--spacing-4);
+  color: var(--color-text-primary);
+}
+
+.cv-admin-panel__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-4);
+}
+
+.cv-admin-panel__link-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.cv-admin-panel__link-row a {
+  color: var(--color-accent);
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.cv-admin-panel__link-row a:hover,
+.cv-admin-panel__link-row a:focus-visible {
+  text-decoration: underline;
+}
+
+.cv-admin-panel__status {
+  min-height: 1.5rem;
+  font-size: var(--font-size-sm);
+}
+
+.cv-admin-panel__status[data-tone="success"] {
+  color: var(--color-success);
+}
+
+.cv-admin-panel__status[data-tone="warning"] {
+  color: var(--color-warning);
+}
+
+.cv-admin-panel__status[data-tone="danger"] {
+  color: var(--color-danger);
+}
+
+.cv-admin-panel details:focus-within,
+.cv-admin-panel summary:focus-visible,
+.cv-admin-panel input[type="file"]:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
+  outline-offset: 3px;
+}
+
+@media (min-width: 768px) {
+  .cv-admin-panel details {
+    padding: var(--spacing-5);
+  }
+
+  .cv-admin-panel__actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .cv-admin-panel__link-row {
+    flex-direction: row;
+    align-items: baseline;
+    gap: var(--spacing-2);
+  }
+}

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0%" stop-color="#0ea5a4" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <style>
+      .bg{fill:url(#g)}
+      .card{fill:#fff;opacity:0.06}
+      .title{font:700 48px/1.1 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; fill:#ffffff}
+      .tag{font:600 20px/1 'Inter'; fill:#072f2f}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="800" rx="20"/>
+  <g transform="translate(60,80)">
+    <rect class="card" x="0" y="0" width="1080" height="640" rx="12"/>
+    <text class="title" x="40" y="120">MRV Bootcamp</text>
+    <text class="title" x="40" y="180" font-size="32">Front End SPA Developer</text>
+    <g transform="translate(40,260)">
+      <rect width="220" height="140" rx="8" fill="#ffffff" opacity="0.06"/>
+      <text x="16" y="40" class="tag">HTML5 · CSS3 · JS</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="g3" x1="0" x2="1">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#fb923c" />
+    </linearGradient>
+    <style>
+      .bg{fill:url(#g3)}
+      .title{font:700 44px 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; fill:#fff}
+      .meta{font:600 18px 'Inter'; fill:#fff}
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="800" rx="20"/>
+  <g transform="translate(60,160)">
+    <text class="title" x="0" y="0">Curso em Vídeo</text>
+    <text class="meta" x="0" y="56">Exercícios resolvidos — Python</text>
+    <g transform="translate(0,120)">
+      <rect x="0" y="0" width="420" height="300" rx="8" fill="#fff" opacity="0.06"/>
+      <text x="20" y="40" fill="#fff" font-size="18">Scripts · Desafios · Aprendizado</text>
+    </g>
+  </g>
+</svg>

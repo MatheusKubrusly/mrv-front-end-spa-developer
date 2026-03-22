@@ -127,6 +127,31 @@
 }
 
 /* ============================================
+ * Backwards-compatibility aliases (mapeia variáveis legadas para tokens currentes)
+ * Isto permite migrar gradualmente arquivos que ainda usam --bg-primary, --text-primary, etc.
+ * Não duplicar valores aqui — referenciar os tokens canônicos definidos acima.
+ * ============================================ */
+
+:root {
+  --bg-primary: var(--color-bg-primary);
+  --bg-secondary: var(--color-bg-secondary);
+  --bg-tertiary: var(--color-bg-secondary);
+
+  --text-primary: var(--color-text-primary);
+  --text-secondary: var(--color-text-secondary);
+
+  --header-bg: var(--color-bg-secondary);
+  --header-text: var(--color-text-primary);
+  --header-text-secondary: var(--color-text-secondary);
+
+  --link-color: var(--color-accent);
+  --link-hover: var(--color-accent);
+
+  --border-color: var(--color-border);
+  --shadow-color: var(--color-shadow);
+}
+
+/* ============================================
  * TEMA LIGHT MODE
  * Aplicado com data-theme="light" no HTML
  * ============================================ */

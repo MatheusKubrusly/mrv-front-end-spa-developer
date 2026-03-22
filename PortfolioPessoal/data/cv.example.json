@@ -1,0 +1,15 @@
+{
+  "# examples": "Use path for a local PDF, link for a public URL, or both. If the local file exists it takes priority over link.",
+  "example_local_pdf": {
+    "path": "assets/matheus-kubrusly-cv.pdf",
+    "downloadName": "matheus-kubrusly-cv.pdf"
+  },
+  "example_public_link": {
+    "link": "https://www.linkedin.com/in/matheus-kubrusly"
+  },
+  "example_both": {
+    "path": "assets/matheus-kubrusly-cv.pdf",
+    "link": "https://www.linkedin.com/in/matheus-kubrusly",
+    "downloadName": "matheus-kubrusly-cv.pdf"
+  }
+}

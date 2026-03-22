@@ -1,0 +1,50 @@
+/* About Snapshot block - mobile-first */
+.about-snapshot {
+  background: var(--bg-secondary);
+  padding: 1.25rem;
+  border-radius: 12px;
+  margin: 1.25rem auto 2rem auto;
+  max-width: 820px;
+}
+
+.snapshot-inner h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-bio {
+  color: var(--text-primary);
+  font-size: 0.98rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-list {
+  list-style: none;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.about-list li {
+  background: transparent;
+  color: var(--text-secondary);
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  font-size: 0.9rem;
+}
+
+.about-focus {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .about-snapshot {
+    padding: 1.75rem;
+  }
+  .snapshot-inner h2 {
+    font-size: 1.25rem;
+  }
+}

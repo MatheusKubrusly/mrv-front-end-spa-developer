@@ -1,22 +1,49 @@
 {
   "projects": [
     {
-      "id": 1,
-      "title": "Projeto 1",
-      "description": "Descrição do projeto",
+      "id": "mrv-front-end-spa-developer",
+      "title": "MRV Bootcamp — Front End SPA Developer",
+      "description": "Projeto do bootcamp MRV focado em SPA, componentes e i18n.",
+      "problem": "Demonstrar entrega prática de SPA sem depender de frameworks e com boa arquitetura de conteúdo.",
+      "solution": "Implementação de um portfólio modular com renderização por JSON, suporte i18n e ênfase em acessibilidade.",
       "technologies": ["HTML5", "CSS3", "JavaScript"],
-      "repository": "https://github.com/...",
-      "deployed": "https://...",
-      "image": "assets/project-1.jpg"
+      "repository": "https://github.com/MatheusKubrusly/mrv-front-end-spa-developer",
+      "image": "assets/projects/mrv-front-end-spa-developer.svg",
+      "image_alt": "Captura do portfólio MRV Bootcamp",
+      "author": true,
+      "deployed": "",
+      "featured": true,
+      "status": "active"
     },
     {
-      "id": 2,
-      "title": "Projeto 2",
-      "description": "Descrição do projeto",
-      "technologies": ["HTML5", "CSS3"],
-      "repository": "https://github.com/...",
-      "deployed": "https://...",
-      "image": "assets/project-2.jpg"
+      "id": "MineracaoTextos",
+      "title": "Mineração de Textos — estudos em NLP",
+      "description": "Exploração de álgebra linear e cálculo aplicados ao Processamento de Linguagem Natural.",
+      "problem": "Necessidade de aplicar fundamentos matemáticos para experimentos em NLP.",
+      "solution": "Repositório de experimentos e notebooks com exemplos sobre vetorização, similaridade e análise de texto.",
+      "technologies": ["Python", "NumPy", "Pandas"],
+      "repository": "https://github.com/MatheusKubrusly/MineracaoTextos",
+      "image": "assets/projects/MineracaoTextos.svg",
+      "image_alt": "Notebook de mineração de textos",
+      "author": true,
+      "deployed": "",
+      "featured": true,
+      "status": "in-progress"
+    },
+    {
+      "id": "curso-em-video-python",
+      "title": "Curso em Vídeo — Exercícios em Python",
+      "description": "Soluções dos exercícios do curso Curso em Vídeo (Gustavo Guanabara).",
+      "problem": "Praticar lógica e sintaxe de Python através de exercícios guiados.",
+      "solution": "Coleção de scripts e desafios resolvidos com explicações de raciocínio e código.",
+      "technologies": ["Python"],
+      "repository": "https://github.com/MatheusKubrusly/curso-em-video-python",
+      "image": "assets/projects/curso-em-video-python.svg",
+      "image_alt": "Scripts de exercícios em Python",
+      "author": true,
+      "deployed": "",
+      "featured": false,
+      "status": "completed"
     }
   ]
 }

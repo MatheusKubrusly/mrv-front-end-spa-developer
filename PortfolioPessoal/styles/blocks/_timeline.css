@@ -1,0 +1,22 @@
+/* TIMELINE / NEWS */
+.posts-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 1000px;
+}
+
+.post .card__title a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.timeline__empty {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .posts-container {
+    grid-template-columns: 1fr;
+  }
+}

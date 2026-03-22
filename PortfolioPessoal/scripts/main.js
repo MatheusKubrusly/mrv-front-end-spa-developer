@@ -1,65 +1,101 @@
 /**
- * Main JS - Inicializa a aplicação
- * Importará módulos de utils, componentes, etc.
+ * Main JS - Inicializa a aplicação e orquestra renderizadores
  */
 
-// Importações (serão adicionadas conforme os módulos forem criados)
-// import { setTheme } from './utils/darkMode.js';
-// import { t } from './utils/i18n.js';
-// import { renderHeader } from './components/header.js';
-
-// Inicialização da aplicação
 document.addEventListener('DOMContentLoaded', () => {
   console.log('App initializing...');
-  
-  // Inicializar componentes e funcionalidades
-  // renderHeader();
-  // loadTheme();
-  // loadLanguage();
-  
-  // Inicializar i18n e configurar listeners
+
+  // Inicializa i18n e outros utilitários já carregados como scripts globais
+  // Esperamos que window.i18n esteja pronto (o módulo i18n.js inicializa-se automaticamente)
+
+  // Tenta renderizar Now e News. Componentes expõem funções globais: renderNow e renderNews
+  if (typeof window.renderNow === 'function') {
+    window.renderNow();
+  } else {
+    console.warn('renderNow não encontrado');
+  }
+
+  if (typeof window.renderNews === 'function') {
+    window.renderNews();
+  } else {
+    console.warn('renderNews não encontrado');
+  }
+
+  // Inicialização do toggle de idioma (se i18n disponível)
   initializeI18n();
+  // Inicializa toggles de tema e navegação (hamburger)
+  initializeThemeAndNavigation();
 });
 
-/**
- * Inicializa o sistema de internacionalização
- * Configura o botão de toggle de idioma e atualiza o indicador
- */
 function initializeI18n() {
-  // Aguardar que o i18n esteja inicializado
   if (!window.i18n) {
     console.warn('i18n não foi carregado');
     return;
   }
 
-  // Elemento do botão toggle
   const languageToggle = document.getElementById('language-toggle');
   const langIndicator = document.getElementById('lang-indicator');
 
+  function updateLanguageIndicator() {
+    if (!langIndicator) return;
+    const currentLang = window.i18n.getLanguage();
+    langIndicator.textContent = currentLang === 'ptBR' ? 'PT' : 'EN';
+    // atualizar estado ARIA para leitores de tela
+    if (languageToggle) {
+      languageToggle.setAttribute('aria-pressed', String(currentLang === 'ptBR'));
+      languageToggle.setAttribute('title', currentLang === 'ptBR' ? 'PT-BR' : 'EN');
+    }
+  }
+
+  updateLanguageIndicator();
+
   if (languageToggle) {
-    // Atualizar indicador ao inicializar
-    updateLanguageIndicator();
-
-    // Listener para o clique no botão
     languageToggle.addEventListener('click', () => {
-      const newLang = window.i18n.toggleLanguage();
+      window.i18n.toggleLanguage();
       updateLanguageIndicator();
-    });
-
-    // Listener para mudanças de idioma (disparado pelo i18n)
-    document.addEventListener('languageChanged', (e) => {
-      console.log('Idioma alterado para:', e.detail.language); // Esta variável "e" é o objeto do evento que foi disparado, e "detail" é a propriedade desse objeto que contém os detalhes do evento, incluindo o idioma atual e a instância do i18n.
+      // re-renderizar seções que dependem de i18n
+      if (typeof window.renderNow === 'function') window.renderNow();
+      if (typeof window.renderNews === 'function') window.renderNews();
+      if (typeof window.initializeCvLink === 'function') window.initializeCvLink();
+      if (typeof window.initializeAttachedCv === 'function') window.initializeAttachedCv();
     });
   }
 }
 
-/**
- * Atualiza o indicador visual do idioma atual
- */
-function updateLanguageIndicator() {
-  const langIndicator = document.getElementById('lang-indicator')
-  if (langIndicator) { //Apesar desta variável ter sido declarada apenas na função chamadora, o escopo de updateLanguageIndicator herda o escopo de initializeI18n, justamente por ser uma função aninhada.
-    const currentLang = window.i18n.getLanguage();
-    langIndicator.textContent = currentLang === 'ptBR' ? 'PT' : 'EN';
+function initializeThemeAndNavigation() {
+  // Theme toggle
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeIndicator = document.getElementById('theme-indicator');
+
+  function updateThemeIndicator() {
+    if (!themeIndicator) return;
+    const t = window.themeManager ? window.themeManager.getCurrentTheme() : document.documentElement.getAttribute('data-theme');
+    themeIndicator.textContent = t === 'light' ? '☀️' : '🌙';
+  }
+
+  if (themeToggle && window.themeManager) {
+    themeToggle.addEventListener('click', () => {
+      // add transition class for smooth swap
+      document.body.classList.add('theme-transitioning');
+      window.themeManager.toggleTheme();
+      updateThemeIndicator();
+      // remove transition class after animation
+      setTimeout(() => document.body.classList.remove('theme-transitioning'), 300);
+    });
+  }
+
+  updateThemeIndicator();
+
+  // Hamburger navigation
+  const hamburger = document.querySelector('.hamburger');
+  const primaryNav = document.getElementById('primary-navigation');
+
+  if (hamburger && primaryNav) {
+    hamburger.addEventListener('click', () => {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!expanded));
+      hamburger.classList.toggle('active');
+      primaryNav.classList.toggle('active');
+    });
   }
 }

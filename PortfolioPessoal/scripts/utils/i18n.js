@@ -4,9 +4,23 @@
 class I18n {
   constructor() {
     this.translations = {};
-    this.currentLanguage = this.getStoredLanguage() || 'ptBR'; //se getStoredLanguage() retornar null, usa 'ptBR' como padrão
-    this.availableLanguages = ['ptBR', 'en']; //as línguas disponíveis são ingl~es e português
+    this.availableLanguages = ['ptBR', 'en']; //as línguas disponíveis são inglês e português
+    this.currentLanguage = this.normalizeStoredLanguage(this.getStoredLanguage()) || 'ptBR';
     this.initialized = false;
+  }
+
+  /**
+   * Normaliza valores antigos armazenados no localStorage (ex: 'pt-BR', 'en-US')
+   * para os códigos usados internamente ('ptBR', 'en').
+   */
+  normalizeStoredLanguage(value) {
+    if (!value) return null;
+    const v = value.toLowerCase();
+    if (v === 'pt-br' || v === 'pt' || v === 'ptbr') return 'ptBR';
+    if (v === 'en-us' || v === 'en' || v === 'en-us' || v === 'en') return 'en';
+    // se já estiver no formato interno, retorne como está
+    if (this.availableLanguages.includes(value)) return value;
+    return null;
   }
 
   /**
@@ -21,6 +35,8 @@ class I18n {
       }
       this.translations = await response.json();
       this.initialized = true;
+      // garante atributo lang corretamente para acessibilidade
+      document.documentElement.lang = this.currentLanguage === 'ptBR' ? 'pt-BR' : 'en';
       this.applyLanguage(this.currentLanguage);
     } catch (error) {
       console.error('Erro ao inicializar i18n:', error);
@@ -67,7 +83,7 @@ class I18n {
    * @returns {string|null} - Idioma armazenado ou null
    */
   getStoredLanguage() {
-    return localStorage.getItem('language'); // Estamos acessando o armazenamento local do domínio que estamos acessando
+    return localStorage.getItem('language'); // retorna o valor salvo (pode ser 'ptBR', 'en' ou formatos antigos)
   }
 
   /**
@@ -91,7 +107,10 @@ class I18n {
     }
 
     this.currentLanguage = language;
+    // Salva o código interno no localStorage
     localStorage.setItem('language', language);
+    // Atualiza atributo lang do documento para fins de acessibilidade
+    document.documentElement.lang = language === 'ptBR' ? 'pt-BR' : 'en';
     this.applyLanguage(language);
   }
 

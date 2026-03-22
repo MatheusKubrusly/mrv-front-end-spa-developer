@@ -1,0 +1,29 @@
+/* NOW SECTION */
+.now {
+  max-width: 800px;
+}
+
+.now article {
+  display: grid;
+  gap: 1rem;
+}
+
+.now__card .card__title {
+  font-size: 1.05rem;
+}
+
+.now__focus {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.now__empty {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 640px) {
+  .now article {
+    gap: 0.75rem;
+  }
+}

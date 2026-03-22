@@ -1,0 +1,43 @@
+/* Projects block styles - mobile-first */
+.projects .projects-grid{
+  display: grid;
+  gap: 1rem;
+}
+.project-card{
+  background: var(--bg-secondary);
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+.project-card img{
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.project-figure{position:relative;flex:0 0 120px;min-width:120px;margin:0}
+.project-figure img{width:120px;height:90px;object-fit:cover;border-radius:6px;display:block}
+.fig-overlay{position:absolute;inset:auto 0 0 0;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.45));color:#fff;padding:0.5rem;border-bottom-left-radius:6px;border-bottom-right-radius:6px;display:flex;align-items:center;justify-content:space-between;gap:0.5rem}
+.fig-title{font-size:0.85rem;font-weight:600}
+.fig-badge{background:var(--accent);color:var(--accent-contrast, #fff);padding:0.15rem 0.4rem;border-radius:999px;font-size:0.75rem}
+
+/* Modal */
+.project-modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:1200}
+.project-modal .pm-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6)}
+.project-modal .pm-box{position:relative;background:var(--bg);color:var(--text);max-width:940px;width:calc(100% - 2rem);max-height:90vh;overflow:auto;border-radius:8px;display:flex;gap:1rem;padding:1rem;z-index:2}
+.pm-image{width:320px;height:auto;object-fit:contain;border-radius:6px;flex:0 0 320px}
+.pm-info{flex:1}
+.pm-info h3{margin-top:0}
+.pm-links a{display:inline-block;margin-right:0.6rem;color:var(--accent)}
+.pm-close{position:absolute;right:0.5rem;top:0.3rem;background:transparent;border:0;font-size:1.4rem;line-height:1;color:var(--text);cursor:pointer}
+.project-card .meta{
+  flex: 1;
+}
+.project-card h3{margin:0 0 0.25rem 0}
+.project-card p{color:var(--text-secondary);font-size:0.95rem;margin:0}
+.project-card .tech-list{margin-top:0.5rem;color:var(--text-secondary);font-size:0.85rem}
+@media(min-width:800px){
+  .projects .projects-grid{grid-template-columns:repeat(2,1fr)}
+}
