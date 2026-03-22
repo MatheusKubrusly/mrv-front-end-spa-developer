@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="dark">
+<!--html lang="pt-BR" data-theme="light">-->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfólio pessoal - desenvolvedor web fullstack">
   <meta name="author" content="Matheus Kubrusly">
-  <title>Portfólio Pessoal - Matheus Kubrusly</title>
-  
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="styles/main.css">
+  <title>Portfólio Pessoal - Matheus Kubrusly</title> <!-- Este título refere-se ao nome que descreve a janela do navegador -->
+  <script defer src="scripts/utils/i18n.js"></script>
+  <script defer src="scripts/utils/darkMode.js"></script>
+  <script defer src="scripts/main.js"></script> <!-- Estamos garantindo um download mais rápido ao utilizar de "defer" e, ao mesmo tempo, estamos garantindo que estes scripts apenas serão executados no final do carregamento do DOM-->
 </head>
 <body>
   <!-- Header: será preenchido pela Issue #4 -->
@@ -72,8 +76,6 @@
       <!-- Links sociais -->
     </nav>
   </footer>
-
-  <script src="scripts/utils/i18n.js"></script>
-  <script src="scripts/main.js"></script>
+  
 </body>
 </html>

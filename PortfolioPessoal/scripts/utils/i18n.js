@@ -4,8 +4,8 @@
 class I18n {
   constructor() {
     this.translations = {};
-    this.currentLanguage = this.getStoredLanguage() || 'ptBR';
-    this.availableLanguages = ['ptBR', 'en'];
+    this.currentLanguage = this.getStoredLanguage() || 'ptBR'; //se getStoredLanguage() retornar null, usa 'ptBR' como padrão
+    this.availableLanguages = ['ptBR', 'en']; //as línguas disponíveis são ingl~es e português
     this.initialized = false;
   }
 
@@ -15,8 +15,8 @@ class I18n {
    */
   async init() {
     try {
-      const response = await fetch('./data/i18n.json');
-      if (!response.ok) {
+      const response = await fetch('./data/i18n.json'); 
+      if (!response.ok) { // Se a busca pelo arquivo .json falhar...
         throw new Error(`Erro ao carregar i18n.json: ${response.statusText}`);
       }
       this.translations = await response.json();
@@ -67,7 +67,7 @@ class I18n {
    * @returns {string|null} - Idioma armazenado ou null
    */
   getStoredLanguage() {
-    return localStorage.getItem('language');
+    return localStorage.getItem('language'); // Estamos acessando o armazenamento local do domínio que estamos acessando
   }
 
   /**
@@ -85,7 +85,7 @@ class I18n {
    * @param {string} language - Código do idioma (ptBR ou en)
    */
   setLanguage(language) {
-    if (!this.availableLanguages.includes(language)) {
+    if (!this.availableLanguages.includes(language)) { // Este if verifica se o valor da variável language já está presente dentro do array de availableLanguages. Se não estiver, significa que o idioma passado como argumento não é suportado pelo sistema, e então é exibida uma mensagem de aviso no console e a função é encerrada sem fazer nenhuma alteração.
       console.warn(`Idioma ${language} não disponível`);
       return;
     }
@@ -138,13 +138,13 @@ class I18n {
 }
 
 // Cria instância global do i18n
-window.i18n = new I18n();
+window.i18n = new I18n(); 
 
 // Inicializa o i18n quando o DOM estiver pronto
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     window.i18n.init();
   });
-} else {
+} else { // Esta estrutura condicional garante que, independentemente se o script foi carregado antes ou depois do DOM ter sido totalmente processado, a função apenas será executado após todos os elementos html já terem sido carregados, evitando erros de referência a elementos que ainda não existem no momento da execução do script.
   window.i18n.init();
 }

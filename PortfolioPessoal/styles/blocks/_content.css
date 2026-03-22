@@ -1,0 +1,13 @@
+/* ============================================
+ * CONTENT SECTION - Container de Conteúdo
+ * ============================================ */
+
+.content-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}

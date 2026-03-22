@@ -48,8 +48,7 @@ function initializeI18n() {
 
     // Listener para mudanças de idioma (disparado pelo i18n)
     document.addEventListener('languageChanged', (e) => {
-      updateLanguageIndicator();
-      console.log('Idioma alterado para:', e.detail.language);
+      console.log('Idioma alterado para:', e.detail.language); // Esta variável "e" é o objeto do evento que foi disparado, e "detail" é a propriedade desse objeto que contém os detalhes do evento, incluindo o idioma atual e a instância do i18n.
     });
   }
 }
@@ -58,8 +57,8 @@ function initializeI18n() {
  * Atualiza o indicador visual do idioma atual
  */
 function updateLanguageIndicator() {
-  const langIndicator = document.getElementById('lang-indicator');
-  if (langIndicator) {
+  const langIndicator = document.getElementById('lang-indicator')
+  if (langIndicator) { //Apesar desta variável ter sido declarada apenas na função chamadora, o escopo de updateLanguageIndicator herda o escopo de initializeI18n, justamente por ser uma função aninhada.
     const currentLang = window.i18n.getLanguage();
     langIndicator.textContent = currentLang === 'ptBR' ? 'PT' : 'EN';
   }

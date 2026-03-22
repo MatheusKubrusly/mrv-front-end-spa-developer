@@ -18,7 +18,7 @@ class ThemeManager {
    * Detecta preferência salva ou preferência do sistema
    */
   init() {
-    const savedTheme = this.getSavedTheme();
+    const savedTheme = this.getSavedTheme();  // valor de retorno = null
     const preferredTheme = savedTheme || this.getSystemPreference();
     
     this.setTheme(preferredTheme);
@@ -29,7 +29,7 @@ class ThemeManager {
    * @returns {string|null} Tema salvo ou null
    */
   getSavedTheme() {
-    return localStorage.getItem(this.STORAGE_KEY);
+    return localStorage.getItem(this.STORAGE_KEY); // no momento, este método estará retornando null, posto que o item que estamos buscando não foi definido
   }
 
   /**
@@ -37,10 +37,12 @@ class ThemeManager {
    * @returns {string} 'dark' se o sistema preferir dark mode, senão 'light'
    */
   getSystemPreference() {
+    //console.log(window.matchMedia);
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      //console.log(window.matchMedia('(prefers-color-scheme: dark)'));
       return this.DARK_THEME;
     }
-    return this.LIGHT_THEME;
+    return this.LIGHT_THEME; // se o método matchMedia não for suportado pelo navegador que estivermos utilizando, aqui estamos definindo que por padrão o tema será o ligth
   }
 
   /**
