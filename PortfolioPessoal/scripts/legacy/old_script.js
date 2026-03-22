@@ -1,3 +1,6 @@
+// Legacy script moved here to avoid duplication with scripts/main.js
+// Original filename: /script.js
+// Kept for reference; the active logic lives in scripts/main.js
 // ===== FUNCIONALIDADE DE MENU HAMBÚRGUER =====
 const hamburgerMenu = document.querySelector('#hamburger-menu');
 const headerNav = document.querySelector('.header-nav');
