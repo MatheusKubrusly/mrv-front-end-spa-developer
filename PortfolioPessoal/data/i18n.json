@@ -2,19 +2,28 @@
   "ptBR": {
     "nav": {
       "home": "Home",
+      "now": "Now",
       "news": "Notícias",
       "cv": "Currículo",
       "projects": "Projetos"
     },
     "hero": {
-      "welcome": "Bem-vindo",
-      "description": "Desenvolvedor web fullstack apaixonado por tecnologia"
+      "eyebrow": "Olá — eu sou",
+      "headline": "Matheus Kubrusly — Desenvolvedor Web",
+      "lead": "Construo interfaces e sistemas web com foco em clareza, performance e experiência.",
+      "cta_primary": "Ver projetos",
+      "cta_secondary": "Ver currículo ou perfil",
+      "cta_resume_file": "Baixar currículo",
+      "cta_profile": "Ver perfil",
+      "cta_linkedin": "Abrir LinkedIn"
     },
     "now": {
-      "title": "O que estou fazendo agora"
+      "title": "O que estou fazendo agora",
+      "empty": "Nenhuma atividade em andamento no momento."
     },
     "timeline": {
-      "title": "Timeline / Notícias"
+      "title": "Timeline / Notícias",
+      "empty": "Nenhuma atualização disponível no momento."
     },
     "curriculum": {
       "title": "Currículo"
@@ -22,26 +31,69 @@
     "projects": {
       "title": "Projetos"
     },
+    "site": {
+      "title": "Portfólio Pessoal — Matheus Kubrusly"
+    },
+    "about": {
+      "title": "Sobre",
+      "short": "Sou desenvolvedor web que transforma problemas complexos em interfaces simples, acessíveis e testáveis.",
+      "long": "Tenho focado em projetos que equilibram performance, acessibilidade e experiência do usuário. Trabalho com HTML5 semântico, CSS3 e JavaScript moderno; gosto de documentar decisões técnicas e aprender por meio de estudos de caso.",
+      "bio_short": "Desenvolvedor web com foco em front-end, acessibilidade e arquitetura de aplicações.",
+      "interest_1": "Front-end e acessibilidade",
+      "interest_2": "Arquitetura de aplicações",
+      "interest_3": "Performance e qualidade de interface",
+      "focus": "Atualmente: aprofundando em interfaces performáticas e experiências de leitura."
+    },
+    "cv_admin": {
+      "attach_button": "Anexar PDF neste navegador",
+      "clear_button": "Remover anexo local",
+      "description": "Você pode usar um link público ou anexar um PDF apenas neste navegador.",
+      "file_label": "Selecionar PDF",
+      "helper": "Para deixar permanente, use data/cv.json com um link ou assets/matheus-kubrusly-cv.pdf.",
+      "link_label": "Link público atual:",
+      "summary": "Opções do currículo",
+      "status_select_file": "Selecione um arquivo PDF antes de anexar.",
+      "status_pdf_only": "Apenas PDFs são suportados.",
+      "status_attached": "Arquivo anexado neste navegador. O botão principal já foi atualizado.",
+      "status_attach_error": "Erro ao anexar o arquivo.",
+      "status_cleared": "Anexo local removido."
+    },
     "footer": {
-      "copyright": "&copy; 2024 Portfólio Pessoal. Todos os direitos reservados."
+    "contact_label": "Contato",
+    "quick_links_label": "Links rápidos",
+    "social_label": "Redes",
+    "email": "matheusmontenegro100@gmail.com",
+    "institution_email": "matheus.montenegro@aluno.cefet-rj.br",
+    "phone": "+55 21 97351-8481",
+    "email_placeholder": "matheusmontenegro100@gmail.com",
+    "copyright": "&copy; 2024 Matheus Kubrusly. Todos os direitos reservados."
     }
   },
   "en": {
     "nav": {
       "home": "Home",
+      "now": "Now",
       "news": "News",
       "cv": "Resume",
       "projects": "Projects"
     },
     "hero": {
-      "welcome": "Welcome",
-      "description": "Fullstack web developer passionate about technology"
+      "eyebrow": "Hello — I'm",
+      "headline": "Matheus Kubrusly — Web Developer",
+      "lead": "I build interfaces and web systems focused on clarity, performance and experience.",
+      "cta_primary": "See projects",
+      "cta_secondary": "See resume or profile",
+      "cta_resume_file": "Download resume",
+      "cta_profile": "View profile",
+      "cta_linkedin": "Open LinkedIn"
     },
     "now": {
-      "title": "What I'm doing now"
+      "title": "What I'm doing now",
+      "empty": "No activities in progress right now."
     },
     "timeline": {
-      "title": "Timeline / News"
+      "title": "Timeline / News",
+      "empty": "No updates available right now."
     },
     "curriculum": {
       "title": "Resume"
@@ -49,8 +101,42 @@
     "projects": {
       "title": "Projects"
     },
+    "site": {
+      "title": "Personal Portfolio — Matheus Kubrusly"
+    },
+    "about": {
+      "title": "About",
+      "short": "I'm a web developer who turns complex problems into simple, accessible and testable interfaces.",
+      "long": "I focus on projects that balance performance, accessibility and user experience. I work with semantic HTML5, CSS3 and modern JavaScript; I like documenting technical decisions and learning through case studies.",
+      "bio_short": "Web developer focused on front-end, accessibility and application architecture.",
+      "interest_1": "Front-end and accessibility",
+      "interest_2": "Application architecture",
+      "interest_3": "Interface performance and quality",
+      "focus": "Currently: deepening knowledge in performant interfaces and reading experiences."
+    },
+    "cv_admin": {
+      "attach_button": "Attach PDF in this browser",
+      "clear_button": "Remove local attachment",
+      "description": "You can use a public link or attach a PDF only in this browser.",
+      "file_label": "Choose PDF",
+      "helper": "For a permanent setup, use data/cv.json with a link or assets/matheus-kubrusly-cv.pdf.",
+      "link_label": "Current public link:",
+      "summary": "Resume options",
+      "status_select_file": "Choose a PDF file before attaching it.",
+      "status_pdf_only": "Only PDF files are supported.",
+      "status_attached": "File attached in this browser. The main button is already updated.",
+      "status_attach_error": "Could not attach the file.",
+      "status_cleared": "Local attachment removed."
+    },
     "footer": {
-      "copyright": "&copy; 2024 Personal Portfolio. All rights reserved."
+      "contact_label": "Contact",
+      "quick_links_label": "Quick links",
+      "social_label": "Networks",
+      "email": "matheusmontenegro100@gmail.com",
+      "institution_email": "matheus.montenegro@aluno.cefet-rj.br",
+      "phone": "+55 21 97351-8481",
+      "email_placeholder": "matheusmontenegro100@gmail.com",
+      "copyright": "&copy; 2024 Matheus Kubrusly. All rights reserved."
     }
   }
 }
