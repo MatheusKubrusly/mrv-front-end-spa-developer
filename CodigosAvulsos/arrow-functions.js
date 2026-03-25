@@ -12,7 +12,7 @@ const counter = {
     setTimeout(() => { // Esta função setTimeOut() tem um escopo global!!!
       console.log(typeof this.count);
       console.log("Before incrementing:", this.count); // Antes de incrementar, o valor de "this.count" é 0
-      this.count++; 
+      this.count++; // Este "this" se refere ao objeto "counter" e não ao objeto "Function" do setTimeout, porque as arrow functions não têm seu próprio "this", elas herdam o "this" do contexto onde foram definidas, que é o método "start" do objeto "counter".
       console.log("Arrow:", this.count); 
     }, 100);
   }
@@ -25,7 +25,7 @@ counter.start();
 
 //Tentando entender melhor o comportamento das funções 
 
-function teste() { // Perceba que, para criarmos uma função explicitamente, precisamos utilizar desse operador "function" e dar um nome para a função, ou seja, "teste"
+function teste() { // Perceba que, para criarmos uma função explicitamente, precisamos utilizar desse operador "function" e dar um nome para a função, ou seja, "teste1"
     console.log("Teste1");
 }
 
@@ -36,5 +36,9 @@ function teste() { // Será que esta função irá sobrescrever a outra de mesmo
 teste(); // Esta função sobrescreve a primeira função declarada e imprime apenas "Teste2" no console. 
 // Basicamente, é como se eu estivesse pegando o ponteiro que apontasse para as instruções da primeira função e trocasse para o ponteiro que apontasse para esta outra função que imprime "Teste2". Este conceito também está presente em linguagens como C e Java, portanto, não se engane!
 
+const FuncaoTeste = function() { // Quando estamos atribuindo uma função a uma variável, não precisamos necessariamente atribuir um nome identificador a ela
+    console.log("Teste3");
+}
 
+FuncaoTeste();
 
