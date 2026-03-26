@@ -1,20 +1,21 @@
-//// Vamos tentar colocar o 'use strict' bem no início do programa 
-//'use strict';
-//// Quando colocamos o programa no modo estrito, o this interno de uma função não estará mais apontando para o objeto global
-//
-//function teste() {
-//    console.log(this);
-//    // Nos casos que estivermos programando em um strict mode e quisermos referenciar
-//    // o objeto global dentro de uma função
-//    // fazemos da seguinte forma:
-//    console.log(global);
-//}
-//
-//teste(); 
-//
-////'use strict'; // Eu achava que isto poderia vir a funcionar, mas não funciona. O this continua apontando para o objeto global. 
 
-// Quando utilizamos esta função como construtora, teremos algumas linhas de código sendo executadas por baixo dos panos.
+/*
+// Vamos tentar colocar o 'use strict' bem no início do programa 
+'use strict';
+// Quando colocamos o programa no modo estrito, o this interno de uma função não estará mais apontando para o objeto global
+
+function teste() {
+    console.log(this);
+    // Nos casos que estivermos programando em um strict mode e quisermos referenciar
+    // o objeto global dentro de uma função
+    // fazemos da seguinte forma:
+    console.log(global);
+}
+
+teste(); 
+
+//'use strict'; // Eu achava que isto poderia vir a funcionar, mas não funciona. O this continua apontando para o objeto global. 
+//Quando utilizamos esta função como construtora, teremos algumas linhas de código sendo executadas por baixo dos panos.
 function teste2() {
     //const this = {}; // O JavaScript cria um objeto vazio e o associa à variável this, que é a referência para o objeto que está sendo criado.
     console.log("Construtor do objeto sendo executado");
@@ -29,4 +30,18 @@ function teste2() {
 console.log(new teste2()); // o código executa primeiro a função teste2, preparando o objeto, para apenas depois retorná-lo.
 //o retorno do "new teste2()" basicamente estará retornando a referência ao objeto que acabou de ser criado.
 
+*/
+function Person(name) {
+    this.name = name;
+    this.sayHello = function() {
+        console.log(`Hello, my name is ${this.name}`);
+    }
+}
+
+const me = new Person("Alice");
+console.log(me);
+me.sayHello();
+
+const method = me.sayHello;
+method(); // O this dentro do método sayHello não se refere mais ao objeto me, mas sim ao objeto global, o que pode levar a resultados inesperados.
 
