@@ -31,32 +31,34 @@ console.log(new teste2()); // o código executa primeiro a função teste2, prep
 //o retorno do "new teste2()" basicamente estará retornando a referência ao objeto que acabou de ser criado.
 
 */
-function Person(name) {
-    this.name = name;
-    this.sayHello = function() {
-        console.log(`Hello, my name is ${this.name}`);
-    }
+//function Person(name) {
+//    this.name = name;
+//    this.sayHello = function() {
+//        console.log(`Hello, my name is ${this.name}`);
+//    }
+//
+//    // setTimeout é uma função de callback
+//    // O que acontecerá com o "this" dentro desta função de callback?
+//    setTimeout(function() {
+//        console.log(this); // O this dentro desta função de callback não se refere mais ao objeto Person, mas sim ao objeto global.
+//    }.bind(this), 100); //Quando eu referencio o objeto que quero que minha função se associe, a função mesmo rodando em um contexto diferente irá lembrar deste respectivo objeto!
+//    // basicamente, a execução do setTimeout() faz com que esta função de callback entre na chamada CallBack Queue e quando ela é trazida para a Call Stack para ser executada, o JavaScript executa ela de forma isolada, o que faz com que ela não refira-se ao objeto que gostaríamos
+//
+//    setTimeout(() => {
+//        console.log(this); // Como estamos utilizando de uma arrow function, neste caso, ela irá lembrar do contexto onde está sendo criada e, portanto, irá referir-se ao objeto que de fato queremos, ao invés de referir-se ao objeto global. É como se ela fosse associada ao objeto mas próximo dela no momento de sua criação e, mesmo que ela seja executada em um contexto diferente, ela irá lembrar deste objeto.
+//    }, 100);
+//}
+//
+////const me = new Person("Alice");
+////console.log(me);
+////me.sayHello();
+//
+////const method = me.sayHello;
+////method(); // O this dentro do método sayHello não se refere mais ao objeto me, mas sim ao objeto global, o que pode levar a resultados inesperados.
+//
+//
+//// callback functions são executadas em um contexto diferente do que elas de fato são criadas
+//const you = new Person("Jhon");
+//// o this dentro da função de callback do setTimeout é executada em um contexto diferente o qual estará associado a um outro objeto chamado "Timeout".
+//
 
-    // setTimeout é uma função de callback
-    // O que acontecerá com o "this" dentro desta função de callback?
-    setTimeout(function() {
-        console.log(this); // O this dentro desta função de callback não se refere mais ao objeto Person, mas sim ao objeto global.
-    }.bind(this), 100); //Quando eu referencio o objeto que quero que minha função se associe, a função mesmo rodando em um contexto diferente irá lembrar deste respectivo objeto!
-    // basicamente, a execução do setTimeout() faz com que esta função de callback entre na chamada CallBack Queue e quando ela é trazida para a Call Stack para ser executada, o JavaScript executa ela de forma isolada, o que faz com que ela não refira-se ao objeto que gostaríamos
-
-    setTimeout(() => {
-        console.log(this); // Como estamos utilizando de uma arrow function, neste caso, ela irá lembrar do contexto onde está sendo criada e, portanto, irá referir-se ao objeto que de fato queremos, ao invés de referir-se ao objeto global. É como se ela fosse associada ao objeto mas próximo dela no momento de sua criação e, mesmo que ela seja executada em um contexto diferente, ela irá lembrar deste objeto.
-    }, 100);
-}
-
-//const me = new Person("Alice");
-//console.log(me);
-//me.sayHello();
-
-//const method = me.sayHello;
-//method(); // O this dentro do método sayHello não se refere mais ao objeto me, mas sim ao objeto global, o que pode levar a resultados inesperados.
-
-
-// callback functions são executadas em um contexto diferente do que elas de fato são criadas
-const you = new Person("Jhon");
-// o this dentro da função de callback do setTimeout é executada em um contexto diferente o qual estará associado a um outro objeto chamado "Timeout".
