@@ -36,12 +36,22 @@ function Person(name) {
     this.sayHello = function() {
         console.log(`Hello, my name is ${this.name}`);
     }
+
+    // setTimeout é uma função de callback
+    // O que acontecerá com o "this" dentro desta função de callback?
+    setTimeout(function() {
+        console.log(this); // O this dentro desta função de callback não se refere mais ao objeto Person, mas sim ao objeto global.
+    }.bind(this), 100);
 }
 
-const me = new Person("Alice");
-console.log(me);
-me.sayHello();
+//const me = new Person("Alice");
+//console.log(me);
+//me.sayHello();
 
-const method = me.sayHello;
-method(); // O this dentro do método sayHello não se refere mais ao objeto me, mas sim ao objeto global, o que pode levar a resultados inesperados.
+//const method = me.sayHello;
+//method(); // O this dentro do método sayHello não se refere mais ao objeto me, mas sim ao objeto global, o que pode levar a resultados inesperados.
 
+
+// callback functions são executadas em um contexto diferente do que elas de fato são criadas
+const you = new Person("Jhon");
+// o this dentro da função de callback do setTimeout é executada em um contexto diferente o qual estará associado a um outro objeto chamado "Timeout".
