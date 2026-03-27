@@ -41,7 +41,12 @@ function Person(name) {
     // O que acontecerá com o "this" dentro desta função de callback?
     setTimeout(function() {
         console.log(this); // O this dentro desta função de callback não se refere mais ao objeto Person, mas sim ao objeto global.
-    }.bind(this), 100);
+    }.bind(this), 100); //Quando eu referencio o objeto que quero que minha função se associe, a função mesmo rodando em um contexto diferente irá lembrar deste respectivo objeto!
+    // basicamente, a execução do setTimeout() faz com que esta função de callback entre na chamada CallBack Queue e quando ela é trazida para a Call Stack para ser executada, o JavaScript executa ela de forma isolada, o que faz com que ela não refira-se ao objeto que gostaríamos
+
+    setTimeout(() => {
+        console.log(this); // Como estamos utilizando de uma arrow function, neste caso, ela irá lembrar do contexto onde está sendo criada e, portanto, irá referir-se ao objeto que de fato queremos, ao invés de referir-se ao objeto global. É como se ela fosse associada ao objeto mas próximo dela no momento de sua criação e, mesmo que ela seja executada em um contexto diferente, ela irá lembrar deste objeto.
+    }, 100);
 }
 
 //const me = new Person("Alice");
