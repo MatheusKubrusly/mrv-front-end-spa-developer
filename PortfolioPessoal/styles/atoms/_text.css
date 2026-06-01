@@ -1,9 +1,0 @@
-/* ============================================
- * TEXT - Componentes de Texto Básico
- * ============================================ */
-
-.plain_text {
-  text-transform: lowercase;
-  margin: 0;
-  margin-bottom: 10px;
-}
