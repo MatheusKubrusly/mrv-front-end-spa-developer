@@ -1,23 +1,24 @@
 console.log("1. Execução Síncrona Inicial");
 
-// Agendando uma Macrotarefa (Fila Normal) com tempo ZERO
-setTimeout(() => {
-  console.log("2. Eu sou uma Macrotarefa (Fila Normal)");
-}, 0);
-
-// Quero testar se de fato quando a execução entra na fila de Macrotasks, apenas uma é executada por vez!
-setTimeout(() => {
-  console.log("3. Eu sou uma Macrotarefa (Fila Normal)");
-}, 0);
-
-// Agendando uma Microtarefa (Fila VIP)
+// Microtask agendada antes das macrotasks
 Promise.resolve().then(() => {
-  console.log("4. Eu sou uma Microtarefa (Fila VIP)");
+  console.log("2. Microtask agendada antes das macrotasks");
 });
 
-// Quero testar se quando a execução entra na fila de Microtasks, todas elas são executadas de acordo com a ordem de chegada
-Promise.resolve().then(() => {
-  console.log("5. Eu sou uma Microtarefa (Fila VIP)");
-});
+setTimeout(() => {
+  console.log("3. Início da Macrotarefa 1");
 
-console.log("6. Execução Síncrona Final");
+  // Esta microtask é agendada dentro da primeira macrotarefa.
+  // O runtime só irá executá-la depois que a primeira macrotarefa terminar.
+  Promise.resolve().then(() => {
+    console.log("4. Microtask agendada dentro da Macrotarefa 1");
+  });
+
+  console.log("5. Fim da Macrotarefa 1");
+}, 0);
+
+setTimeout(() => {
+  console.log("6. Início da Macrotarefa 2");
+}, 0);
+
+console.log("7. Execução Síncrona Final");
